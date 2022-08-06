@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="NewStudentsMarksEO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="STUDENTS_MARKS"
+  AliasName="NewStudentsMarksEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="model_Entity.NewStudentsMarksEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="SlNo"
+    IsNotNull="true"
+    ColumnName="SL_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="STUDENTS_MARKS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StudentId"
+    ColumnName="STUDENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="STUDENTS_MARKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StudentName"
+    Precision="40"
+    ColumnName="STUDENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="STUDENTS_MARKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Class1"
+    Precision="8"
+    ColumnName="CLASS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="STUDENTS_MARKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="8"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Exam"
+    Precision="10"
+    ColumnName="EXAM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="STUDENTS_MARKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Sub1"
+    ColumnName="SUB_1"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="STUDENTS_MARKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Sub2"
+    ColumnName="SUB_2"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="STUDENTS_MARKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Sub3"
+    ColumnName="SUB_3"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="STUDENTS_MARKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Sub4"
+    ColumnName="SUB_4"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="STUDENTS_MARKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Sub5"
+    ColumnName="SUB_5"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="STUDENTS_MARKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Sub6"
+    ColumnName="SUB_6"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="STUDENTS_MARKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Total"
+    ColumnName="TOTAL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="STUDENTS_MARKS"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[(Sub1!=null? Sub1: 0)+(Sub2!=null? Sub2: 0)]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="Sub1"/>
+      <Item
+        Value="Sub2"/>
+    </Dependencies>
+  </Attribute>
+  <Attribute
+    Name="Grade"
+    Precision="10"
+    ColumnName="GRADE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="STUDENTS_MARKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="StudentsEO"
+    Association="model_Entity.StudentsMarksStudentsFk1Assoc"
+    AssociationEnd="model_Entity.StudentsMarksStudentsFk1Assoc.StudentsEO"
+    AssociationOtherEnd="model_Entity.StudentsMarksStudentsFk1Assoc.NewStudentsMarksEO"
+    Type="model_Entity.StudentsEOImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ClassDivEO"
+    Association="model_Entity.StudentsMarksClassDivFk1Assoc"
+    AssociationEnd="model_Entity.StudentsMarksClassDivFk1Assoc.ClassDivEO"
+    AssociationOtherEnd="model_Entity.StudentsMarksClassDivFk1Assoc.NewStudentsMarksEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="StudentsMarksPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="STUDENTS_MARKS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.NewStudentsMarksEO.SlNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008095">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008095"/>
+      <Attr Name="_checkCondition" Value='"SL_NO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.NewStudentsMarksEO.SlNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="StudentsMarksClassDivFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CLASS_DIV_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="STUDENTS_MARKS_CLASS_DIV_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.NewStudentsMarksEO.Class1"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="StudentsMarksStudentsFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="STUDENTS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="STUDENTS_MARKS_STUDENTS_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.NewStudentsMarksEO.StudentId"/>
+    </AttrArray>
+  </Key>
+</Entity>

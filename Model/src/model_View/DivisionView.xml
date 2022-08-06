@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DivisionView"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  SelectList="DivisionEO.DIV_ID, 
+       DivisionEO.DIV_NAME"
+  FromList="DIVISION DivisionEO"
+  OrderBy="DIV_ID"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="DivisionEO"
+    Entity="model_Entity.DivisionEO"/>
+  <ViewAttribute
+    Name="DivId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DivId"
+    EntityUsage="DivisionEO"
+    AliasName="DIV_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DivName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DivName"
+    EntityUsage="DivisionEO"
+    AliasName="DIV_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="ClassDivView"
+    ViewLink="model_ViewLinks.ClassDivDivisionFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

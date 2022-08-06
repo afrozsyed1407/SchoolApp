@@ -1,0 +1,608 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1" styleClass="AFStretchWidth"
+                               topHeight="25px">
+          <f:facet name="bottom"/>
+          <f:facet name="center">
+            <af:panelTabbed id="pt1" styleClass="AFStretchWidth">
+              <af:showDetailItem text="DashBoard" id="sdi1"
+                                 stretchChildren="first"
+                                 styleClass="AFStretchWidth"
+                                 inlineStyle="background-color:ActiveCaption;">
+                <af:panelStretchLayout id="psl2" styleClass="AFStretchWidth">
+                  <f:facet name="bottom"/>
+                  <f:facet name="center">
+                    <af:panelSplitter id="ps1" splitterPosition="250">
+                      <f:facet name="first">
+                        <af:panelBox text="PanelBox1" id="pb1"
+                                     styleClass="AFStretchWidth">
+                          <f:facet name="toolbar"/>
+                          <af:panelFormLayout id="pfl1"
+                                              styleClass="AFStretchWidth"
+                                              inlineStyle="font-size:small;">
+                            <af:panelLabelAndMessage label="#{bindings.NumberOfTeachers.hints.label}"
+                                                     id="plam5">
+                              <af:outputText value="#{bindings.NumberOfTeachers.inputValue}"
+                                             id="ot4">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.NumberOfTeachers.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.NumberOfStudents.hints.label}"
+                                                     id="plam22">
+                              <af:outputText value="#{bindings.NumberOfStudents.inputValue}"
+                                             id="ot7">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.NumberOfStudents.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.NumberOfClasses.hints.label}"
+                                                     id="plam2">
+                              <af:outputText value="#{bindings.NumberOfClasses.inputValue}"
+                                             id="ot9">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.NumberOfClasses.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn6a.hints.label}"
+                                                     id="plam4">
+                              <af:outputText value="#{bindings.StudentsIn6a.inputValue}"
+                                             id="ot5">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn6a.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn6b.hints.label}"
+                                                     id="plam8">
+                              <af:outputText value="#{bindings.StudentsIn6b.inputValue}"
+                                             id="ot8">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn6b.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn6c.hints.label}"
+                                                     id="plam7">
+                              <af:outputText value="#{bindings.StudentsIn6c.inputValue}"
+                                             id="ot23">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn6c.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn6d.hints.label}"
+                                                     id="plam17">
+                              <af:outputText value="#{bindings.StudentsIn6d.inputValue}"
+                                             id="ot16">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn6d.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn7a.hints.label}"
+                                                     id="plam20">
+                              <af:outputText value="#{bindings.StudentsIn7a.inputValue}"
+                                             id="ot22">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn7a.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn7b.hints.label}"
+                                                     id="plam6">
+                              <af:outputText value="#{bindings.StudentsIn7b.inputValue}"
+                                             id="ot6">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn7b.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn7c.hints.label}"
+                                                     id="plam23">
+                              <af:outputText value="#{bindings.StudentsIn7c.inputValue}"
+                                             id="ot13">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn7c.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn7d.hints.label}"
+                                                     id="plam1">
+                              <af:outputText value="#{bindings.StudentsIn7d.inputValue}"
+                                             id="ot17">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn7d.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn8a.hints.label}"
+                                                     id="plam15">
+                              <af:outputText value="#{bindings.StudentsIn8a.inputValue}"
+                                             id="ot2">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn8a.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn8b.hints.label}"
+                                                     id="plam21">
+                              <af:outputText value="#{bindings.StudentsIn8b.inputValue}"
+                                             id="ot19">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn8b.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn8c.hints.label}"
+                                                     id="plam14">
+                              <af:outputText value="#{bindings.StudentsIn8c.inputValue}"
+                                             id="ot10">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn8c.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn8d.hints.label}"
+                                                     id="plam13">
+                              <af:outputText value="#{bindings.StudentsIn8d.inputValue}"
+                                             id="ot21">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn8d.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn9a.hints.label}"
+                                                     id="plam12">
+                              <af:outputText value="#{bindings.StudentsIn9a.inputValue}"
+                                             id="ot18">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn9a.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn9b.hints.label}"
+                                                     id="plam16">
+                              <af:outputText value="#{bindings.StudentsIn9b.inputValue}"
+                                             id="ot15">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn9b.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn9c.hints.label}"
+                                                     id="plam10">
+                              <af:outputText value="#{bindings.StudentsIn9c.inputValue}"
+                                             id="ot1">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn9c.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn9d.hints.label}"
+                                                     id="plam11">
+                              <af:outputText value="#{bindings.StudentsIn9d.inputValue}"
+                                             id="ot3">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn9d.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn10a.hints.label}"
+                                                     id="plam19">
+                              <af:outputText value="#{bindings.StudentsIn10a.inputValue}"
+                                             id="ot11">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn10a.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn10b.hints.label}"
+                                                     id="plam3">
+                              <af:outputText value="#{bindings.StudentsIn10b.inputValue}"
+                                             id="ot14">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn10b.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn10c.hints.label}"
+                                                     id="plam18">
+                              <af:outputText value="#{bindings.StudentsIn10c.inputValue}"
+                                             id="ot12">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn10c.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.StudentsIn10d.hints.label}"
+                                                     id="plam9">
+                              <af:outputText value="#{bindings.StudentsIn10d.inputValue}"
+                                             id="ot20">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.StudentsIn10d.format}"/>
+                              </af:outputText>
+                            </af:panelLabelAndMessage>
+                          </af:panelFormLayout>
+                        </af:panelBox>
+                      </f:facet>
+                      <f:facet name="second">
+                        <af:panelDashboard id="pd1" columns="2"
+                                           styleClass="AFStretchWidth"
+                                           rowHeight="300px">
+                          <af:panelBox text="Total Records" id="pb2">
+                            <f:facet name="toolbar"/>
+                            <dvt:barGraph id="barGraph1"
+                                          value="#{bindings.TotalFeeandExpenceRVO1.graphModel}"
+                                          subType="BAR_VERT_CLUST"
+                                          styleClass="AFStretchWidth"
+                                          dynamicResize="DYNAMIC_SIZE"
+                                          contentDelivery="immediate">
+                              <dvt:background>
+                                <dvt:specialEffects/>
+                              </dvt:background>
+                              <dvt:graphPlotArea/>
+                              <dvt:seriesSet>
+                                <dvt:series/>
+                              </dvt:seriesSet>
+                              <dvt:o1Axis/>
+                              <dvt:y1Axis/>
+                              <dvt:legendArea automaticPlacement="AP_NEVER"/>
+                            </dvt:barGraph>
+                          </af:panelBox>
+                          <af:panelBox text="Todays Records" id="pb3">
+                            <f:facet name="toolbar"/>
+                            <dvt:barGraph id="barGraph2"
+                                          value="#{bindings.TodaysLedgerDASH.graphModel}"
+                                          subType="BAR_VERT_CLUST"
+                                          styleClass="AFStretchWidth"
+                                          contentDelivery="immediate"
+                                          dynamicResize="DYNAMIC_SIZE">
+                              <dvt:background>
+                                <dvt:specialEffects/>
+                              </dvt:background>
+                              <dvt:graphPlotArea/>
+                              <dvt:seriesSet>
+                                <dvt:series/>
+                              </dvt:seriesSet>
+                              <dvt:o1Axis/>
+                              <dvt:y1Axis/>
+                              <dvt:legendArea automaticPlacement="AP_NEVER"/>
+                            </dvt:barGraph>
+                          </af:panelBox>
+                          <af:panelBox text="PanelBox4" id="pb4">
+                            <f:facet name="toolbar"/>
+                          </af:panelBox>
+                          <af:panelBox text="PanelBox5" id="pb5">
+                            <f:facet name="toolbar"/>
+                          </af:panelBox>
+                        </af:panelDashboard>
+                      </f:facet>
+                    </af:panelSplitter>
+                  </f:facet>
+                  <f:facet name="start"/>
+                  <f:facet name="end"/>
+                  <f:facet name="top"/>
+                </af:panelStretchLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="Staff" id="sdi2"
+                                 stretchChildren="first">
+                <af:panelGroupLayout layout="vertical" id="pgl1">
+                  <af:panelHeader text="StaffRecords" id="ph1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.StaffSearchQuery.queryDescriptor}"
+                              model="#{bindings.StaffSearchQuery.queryModel}"
+                              queryListener="#{bindings.StaffSearchQuery.processQuery}"
+                              queryOperationListener="#{bindings.StaffSearchQuery.processQueryOperation}"
+                              resultComponentId="::pc1:resId1"
+                              saveQueryMode="hidden" rows="2" maxColumns="3"/>
+                  </af:panelHeader>
+                  <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                    <f:facet name="menus"/>
+                    <f:facet name="toolbar">
+                      <af:toolbar id="t1"/>
+                    </f:facet>
+                    <f:facet name="statusbar"/>
+                    <af:table value="#{bindings.StaffView1.collectionModel}"
+                              var="row" rows="#{bindings.StaffView1.rangeSize}"
+                              emptyText="#{bindings.StaffView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.StaffView1.rangeSize}"
+                              rowBandingInterval="0"
+                              filterModel="#{bindings.StaffSearchQuery.queryDescriptor}"
+                              queryListener="#{bindings.StaffSearchQuery.processQuery}"
+                              filterVisible="true" varStatus="vs"
+                              selectedRowKeys="#{bindings.StaffView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.StaffView1.collectionModel.makeCurrent}"
+                              rowSelection="single" id="resId1"
+                              styleClass="AFStretchWidth"
+                              partialTriggers=":::qryId1 :::pfl2 :::ctb3" immediate="true"
+                              contentDelivery="immediate">
+                      <af:column sortProperty="StaffId" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StaffView1.hints.StaffId.label}"
+                                 id="resId1c1">
+                        <af:commandLink text="#{row.StaffId}" id="cl1">
+                          <af:showPopupBehavior popupId=":::p1"
+                                                triggerType="action"/>
+                        </af:commandLink>
+                      </af:column>
+                      <af:column sortProperty="FullName" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StaffView1.hints.FullName.label}"
+                                 id="resId1c2">
+                        <af:outputText value="#{row.FullName}" id="ot28"/>
+                      </af:column>
+                      <af:column sortProperty="Dateofbirth" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StaffView1.hints.Dateofbirth.label}"
+                                 id="resId1c3">
+                        <f:facet name="filter">
+                          <af:inputDate value="#{vs.filterCriteria.Dateofbirth}"
+                                        id="id2"/>
+                        </f:facet>
+                        <af:outputText value="#{row.Dateofbirth}" id="ot25">
+                          <af:convertDateTime pattern="#{bindings.StaffView1.hints.Dateofbirth.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column sortProperty="Gender" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StaffView1.hints.Gender.label}"
+                                 id="resId1c4">
+                        <af:outputText value="#{row.Gender}" id="ot32"/>
+                      </af:column>
+                      <af:column sortProperty="Phone" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StaffView1.hints.Phone.label}"
+                                 id="resId1c5">
+                        <af:outputText value="#{row.Phone}" id="ot33">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.StaffView1.hints.Phone.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column sortProperty="Email" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StaffView1.hints.Email.label}"
+                                 id="resId1c6">
+                        <af:outputText value="#{row.Email}" id="ot29"/>
+                      </af:column>
+                      <af:column sortProperty="Salary" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StaffView1.hints.Salary.label}"
+                                 id="resId1c7">
+                        <af:outputText value="#{row.Salary}" id="ot26">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.StaffView1.hints.Salary.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column sortProperty="JoinDate" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StaffView1.hints.JoinDate.label}"
+                                 id="resId1c8">
+                        <f:facet name="filter">
+                          <af:inputDate value="#{vs.filterCriteria.JoinDate}"
+                                        id="id1"/>
+                        </f:facet>
+                        <af:outputText value="#{row.JoinDate}" id="ot30">
+                          <af:convertDateTime pattern="#{bindings.StaffView1.hints.JoinDate.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column sortProperty="EducationalQualification"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.StaffView1.hints.EducationalQualification.label}"
+                                 id="resId1c9">
+                        <af:outputText value="#{row.EducationalQualification}"
+                                       id="ot27"/>
+                      </af:column>
+                      <af:column sortProperty="Subject" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StaffView1.hints.Subject.label}"
+                                 id="resId1c10">
+                        <af:outputText value="#{row.Subject}" id="ot31"/>
+                      </af:column>
+                    </af:table>
+                  </af:panelCollection>
+                  <af:popup id="p1" contentDelivery="lazyUncached">
+                    <af:dialog id="d2" type="cancel"
+                               binding="#{EmpSalryBean.saveSalary}"
+                               affirmativeTextAndAccessKey="Save">
+                      <af:panelBox text="Staff Details" id="pb6">
+                        <f:facet name="toolbar">
+                          <af:toolbar id="t2">
+                            <af:commandToolbarButton text="Save"
+                                                     id="ctb3"
+                                                     icon="/Images/icons/save_ena.png"
+                                                     actionListener="#{EmpSalryBean.SaveIt}"/>
+                          </af:toolbar>
+                        </f:facet>
+                        <af:panelGroupLayout id="pgl2" layout="horizontal">
+                          <af:panelFormLayout id="pfl2" rows="4">
+                            <af:inputText value="#{bindings.StaffId.inputValue}"
+                                          label="#{bindings.StaffId.hints.label}"
+                                          required="#{bindings.StaffId.hints.mandatory}"
+                                          columns="#{bindings.StaffId.hints.displayWidth}"
+                                          maximumLength="#{bindings.StaffId.hints.precision}"
+                                          shortDesc="#{bindings.StaffId.hints.tooltip}"
+                                          id="it5">
+                              <f:validator binding="#{bindings.StaffId.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.StaffId.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.FullName.inputValue}"
+                                          label="#{bindings.FullName.hints.label}"
+                                          required="#{bindings.FullName.hints.mandatory}"
+                                          columns="#{bindings.FullName.hints.displayWidth}"
+                                          maximumLength="#{bindings.FullName.hints.precision}"
+                                          shortDesc="#{bindings.FullName.hints.tooltip}"
+                                          id="it1">
+                              <f:validator binding="#{bindings.FullName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.FatherName.inputValue}"
+                                          label="#{bindings.FatherName.hints.label}"
+                                          required="#{bindings.FatherName.hints.mandatory}"
+                                          columns="#{bindings.FatherName.hints.displayWidth}"
+                                          maximumLength="#{bindings.FatherName.hints.precision}"
+                                          shortDesc="#{bindings.FatherName.hints.tooltip}"
+                                          id="it4">
+                              <f:validator binding="#{bindings.FatherName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Phone.inputValue}"
+                                          label="#{bindings.Phone.hints.label}"
+                                          required="#{bindings.Phone.hints.mandatory}"
+                                          columns="#{bindings.Phone.hints.displayWidth}"
+                                          maximumLength="#{bindings.Phone.hints.precision}"
+                                          shortDesc="#{bindings.Phone.hints.tooltip}"
+                                          id="it2">
+                              <f:validator binding="#{bindings.Phone.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.Phone.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Email.inputValue}"
+                                          label="#{bindings.Email.hints.label}"
+                                          required="#{bindings.Email.hints.mandatory}"
+                                          columns="#{bindings.Email.hints.displayWidth}"
+                                          maximumLength="#{bindings.Email.hints.precision}"
+                                          shortDesc="#{bindings.Email.hints.tooltip}"
+                                          id="it3">
+                              <f:validator binding="#{bindings.Email.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.JoinDate.inputValue}"
+                                          label="#{bindings.JoinDate.hints.label}"
+                                          required="#{bindings.JoinDate.hints.mandatory}"
+                                          shortDesc="#{bindings.JoinDate.hints.tooltip}"
+                                          id="id3">
+                              <f:validator binding="#{bindings.JoinDate.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.JoinDate.format}"/>
+                            </af:inputDate>
+                            <af:inputListOfValues id="subjectId"
+                                                  popupTitle="Search and Select: #{bindings.Subject.hints.label}"
+                                                  value="#{bindings.Subject.inputValue}"
+                                                  label="#{bindings.Subject.hints.label}"
+                                                  model="#{bindings.Subject.listOfValuesModel}"
+                                                  required="#{bindings.Subject.hints.mandatory}"
+                                                  columns="#{bindings.Subject.hints.displayWidth}"
+                                                  shortDesc="#{bindings.Subject.hints.tooltip}">
+                              <f:validator binding="#{bindings.Subject.validator}"/>
+                            </af:inputListOfValues>
+                            <af:inputText value="#{bindings.Salary.inputValue}"
+                                          label="#{bindings.Salary.hints.label}"
+                                          required="#{bindings.Salary.hints.mandatory}"
+                                          columns="#{bindings.Salary.hints.displayWidth}"
+                                          maximumLength="#{bindings.Salary.hints.precision}"
+                                          shortDesc="#{bindings.Salary.hints.tooltip}"
+                                          id="it6">
+                              <f:validator binding="#{bindings.Salary.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.Salary.format}"/>
+                            </af:inputText>
+                          </af:panelFormLayout>
+                          <af:image id="i1"
+                                    inlineStyle="width:150px; height:150px;"
+                                    source="/staffimgservlet?id=#{bindings.StaffId.inputValue}"/>
+                        </af:panelGroupLayout>
+                      </af:panelBox>
+                    </af:dialog>
+                  </af:popup>
+                </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="Students" id="sdi3">
+                <af:panelGroupLayout layout="vertical" id="pgl4">
+                  <af:panelHeader text="Students Details" id="ph2">
+                    <af:query id="qryId2" headerText="Search" disclosed="true"
+                              value="#{bindings.SearchStudentsQuery.queryDescriptor}"
+                              model="#{bindings.SearchStudentsQuery.queryModel}"
+                              queryListener="#{bindings.SearchStudentsQuery.processQuery}"
+                              queryOperationListener="#{bindings.SearchStudentsQuery.processQueryOperation}"
+                              resultComponentId="::pc2:resId2" rows="2"
+                              maxColumns="2" saveQueryMode="hidden"/>
+                  </af:panelHeader>
+                  <af:panelCollection id="pc2" styleClass="AFStretchWidth">
+                    <f:facet name="menus"/>
+                    <f:facet name="toolbar"/>
+                    <f:facet name="statusbar"/>
+                    <af:table value="#{bindings.StudentsView1.collectionModel}"
+                              var="row"
+                              rows="#{bindings.StudentsView1.rangeSize}"
+                              emptyText="#{bindings.StudentsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.StudentsView1.rangeSize}"
+                              rowBandingInterval="0"
+                              filterModel="#{bindings.SearchStudentsQuery.queryDescriptor}"
+                              queryListener="#{bindings.SearchStudentsQuery.processQuery}"
+                              filterVisible="true" varStatus="vs"
+                              selectedRowKeys="#{bindings.StudentsView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.StudentsView1.collectionModel.makeCurrent}"
+                              rowSelection="single" id="resId2">
+                      <af:column id="c1" width="10"/>
+                      <af:column sortProperty="StudentId" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StudentsView1.hints.StudentId.label}"
+                                 id="resId2c1">
+                        <af:outputText value="#{row.StudentId}" id="ot39">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.StudentsView1.hints.StudentId.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column sortProperty="StuddentName" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StudentsView1.hints.StuddentName.label}"
+                                 id="resId2c2">
+                        <af:outputText value="#{row.StuddentName}" id="ot35"/>
+                      </af:column>
+                      <af:column sortProperty="FatherName" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StudentsView1.hints.FatherName.label}"
+                                 id="resId2c3">
+                        <af:outputText value="#{row.FatherName}" id="ot40"/>
+                      </af:column>
+                      <af:column sortProperty="Gender" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StudentsView1.hints.Gender.label}"
+                                 id="resId2c4">
+                        <af:outputText value="#{row.Gender}" id="ot34"/>
+                      </af:column>
+                      <af:column sortProperty="Mobile" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StudentsView1.hints.Mobile.label}"
+                                 id="resId2c5">
+                        <af:outputText value="#{row.Mobile}" id="ot38">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.StudentsView1.hints.Mobile.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column sortProperty="DateOfAdmission"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.StudentsView1.hints.DateOfAdmission.label}"
+                                 id="resId2c6">
+                        <f:facet name="filter">
+                          <af:inputDate value="#{vs.filterCriteria.DateOfAdmission}"
+                                        id="id4"/>
+                        </f:facet>
+                        <af:outputText value="#{row.DateOfAdmission}" id="ot24">
+                          <af:convertDateTime pattern="#{bindings.StudentsView1.hints.DateOfAdmission.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column sortProperty="Fee" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StudentsView1.hints.Fee.label}"
+                                 id="resId2c7">
+                        <af:outputText value="#{row.Fee}" id="ot37">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.StudentsView1.hints.Fee.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column sortProperty="ClsdivId" filterable="true"
+                                 sortable="true"
+                                 headerText="#{bindings.StudentsView1.hints.ClsdivId.label}"
+                                 id="resId2c8">
+                        <af:outputText value="#{row.ClsdivId}" id="ot36"/>
+                      </af:column>
+                    </af:table>
+                  </af:panelCollection>
+                </af:panelGroupLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </f:facet>
+          <f:facet name="start"/>
+          <f:facet name="end"/>
+          <f:facet name="top">
+            <af:panelGroupLayout id="pgl3" layout="horizontal" halign="right"
+                                 styleClass="AFStretchWidth">
+              <af:commandToolbarButton text="Accounts View" id="ctb1"
+                                       action="main"/>
+              <af:commandToolbarButton text="Logout" id="ctb2"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

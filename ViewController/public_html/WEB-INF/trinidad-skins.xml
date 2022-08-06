@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+  <skin>
+    <id>mySkin1.desktop</id>
+    <family>mySkin1</family>
+    <extends>fusion.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>mySkin1.css</style-sheet-name>
+  </skin>
+  <skin>
+    <id>mySkin2.desktop</id>
+    <family>mySkin2</family>
+    <extends>fusion.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>mySkin2.css</style-sheet-name>
+  </skin>
+  <skin>
+    <id>mySkin3.desktop</id>
+    <family>mySkin3</family>
+    <extends>fusion.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>mySkin3.css</style-sheet-name>
+  </skin>
+  <skin>
+    <id>mySkin4.desktop</id>
+    <family>mySkin4</family>
+    <extends>simple.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+  </skin>
+</skins>

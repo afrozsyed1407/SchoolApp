@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Main">
+    <page>/Main.jspx</page>
+  </view>
+  <view id="ManagerPage">
+    <page>/ManagerPage.jspx</page>
+  </view>
+  <view id="Home">
+    <page>/Home.jspx</page>
+  </view>
+  <view id="DefaultPage">
+    <page>/DefaultPage.jspx</page>
+  </view>
+  <router id="router1">
+    <case>
+      <expression>#{sessionScope.account=='account'}</expression>
+      <outcome id="__74">act</outcome>
+    </case>
+    <case>
+      <expression>#{sessionScope.account=='admin'}</expression>
+      <outcome id="__25">mgr</outcome>
+    </case>
+    <default-outcome>default</default-outcome>
+  </router>
+  <control-flow-rule id="__44">
+    <from-activity-id id="__45">ManagerPage</from-activity-id>
+    <control-flow-case id="__47">
+      <from-outcome id="__48">main</from-outcome>
+      <to-activity-id id="__46">Main</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__29">
+    <from-activity-id id="__30">router1</from-activity-id>
+    <control-flow-case id="__32">
+      <from-outcome id="__33">default</from-outcome>
+      <to-activity-id id="__31">DefaultPage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__34">
+      <from-outcome id="__36">mgr</from-outcome>
+      <to-activity-id id="__35">ManagerPage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__40">
+      <from-outcome id="__37">act</from-outcome>
+      <to-activity-id id="__39">Main</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__43">
+    <from-activity-id id="__58">Home</from-activity-id>
+    <control-flow-case id="__60">
+      <from-outcome id="__61">enter</from-outcome>
+      <to-activity-id id="__59">router1</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name id="__3">ExpenceBean</managed-bean-name>
+    <managed-bean-class id="__2">view.Bean.ExpenceBean</managed-bean-class>
+    <managed-bean-scope id="__4">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name id="__7">StudentRecordBean</managed-bean-name>
+    <managed-bean-class id="__8">view.Bean.StudentRecordBean</managed-bean-class>
+    <managed-bean-scope id="__5">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__12">
+    <managed-bean-name id="__10">StaffDetailsBean</managed-bean-name>
+    <managed-bean-class id="__11">view.Bean.StaffDetailsBean</managed-bean-class>
+    <managed-bean-scope id="__9">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__14">
+    <managed-bean-name id="__13">CommonMethodsBean</managed-bean-name>
+    <managed-bean-class id="__16">view.Bean.CommonMethodsBean</managed-bean-class>
+    <managed-bean-scope id="__15">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__19">
+    <managed-bean-name id="__18">MainPageBean</managed-bean-name>
+    <managed-bean-class id="__17">view.Bean.MainPageBean</managed-bean-class>
+    <managed-bean-scope id="__20">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__23">
+    <managed-bean-name id="__22">StudAttendBean</managed-bean-name>
+    <managed-bean-class id="__24">view.Bean.StudAttendBean</managed-bean-class>
+    <managed-bean-scope id="__21">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__50">
+    <managed-bean-name id="__49">EmpSalryBean</managed-bean-name>
+    <managed-bean-class id="__51">view.Bean.EmpSalryBean</managed-bean-class>
+    <managed-bean-scope id="__38">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__53">
+    <managed-bean-name id="__55">LogOutBean</managed-bean-name>
+    <managed-bean-class id="__54">view.Bean.LogOutBean</managed-bean-class>
+    <managed-bean-scope id="__52">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__64">
+    <managed-bean-name id="__63">SkinChanger</managed-bean-name>
+    <managed-bean-class id="__62">view.Bean.SkinChanger</managed-bean-class>
+    <managed-bean-scope id="__56">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__65">
+    <managed-bean-name id="__66">lgnBean</managed-bean-name>
+    <managed-bean-class id="__67">view.Bean.lgnBean</managed-bean-class>
+    <managed-bean-scope id="__68">session</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

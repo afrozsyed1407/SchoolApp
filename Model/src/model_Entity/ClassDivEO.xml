@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ClassDivEO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="CLASS_DIV"
+  AliasName="ClassDivEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="ClsdivId"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="CLSDIV_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CLASS_DIV"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ClassId"
+    IsNotNull="true"
+    ColumnName="CLASS_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CLASS_DIV">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DivId"
+    IsNotNull="true"
+    Precision="5"
+    ColumnName="DIV_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CLASS_DIV">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="ClassEO"
+    Association="model_Assoc.ClassDivClassFk1Assoc"
+    AssociationEnd="model_Assoc.ClassDivClassFk1Assoc.ClassEO"
+    AssociationOtherEnd="model_Assoc.ClassDivClassFk1Assoc.ClassDivEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="DivisionEO"
+    Association="model_Assoc.ClassDivDivisionFk1Assoc"
+    AssociationEnd="model_Assoc.ClassDivDivisionFk1Assoc.DivisionEO"
+    AssociationOtherEnd="model_Assoc.ClassDivDivisionFk1Assoc.ClassDivEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="StudentsEO"
+    Association="model_Assoc.StudentsClassDivFk1Assoc"
+    AssociationEnd="model_Assoc.StudentsClassDivFk1Assoc.StudentsEO"
+    AssociationOtherEnd="model_Assoc.StudentsClassDivFk1Assoc.ClassDivEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TeacherClassEO"
+    Association="model_Assoc.TeacherClassClassDivFk1Assoc"
+    AssociationEnd="model_Assoc.TeacherClassClassDivFk1Assoc.TeacherClassEO"
+    AssociationOtherEnd="model_Assoc.TeacherClassClassDivFk1Assoc.ClassDivEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="StudentsMarksEO"
+    Association="model_Assoc.StudentMarksClassDivFk1Assoc"
+    AssociationEnd="model_Assoc.StudentMarksClassDivFk1Assoc.StudentsMarksEO"
+    AssociationOtherEnd="model_Assoc.StudentMarksClassDivFk1Assoc.ClassDivEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="NewStudentsMarksEO"
+    Association="model_Entity.StudentsMarksClassDivFk1Assoc"
+    AssociationEnd="model_Entity.StudentsMarksClassDivFk1Assoc.NewStudentsMarksEO"
+    AssociationOtherEnd="model_Entity.StudentsMarksClassDivFk1Assoc.ClassDivEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ClassDivPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CLASS_DIV_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.ClassDivEO.ClsdivId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007470">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007470"/>
+      <Attr Name="_checkCondition" Value='"CLSDIV_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.ClassDivEO.ClsdivId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007493">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007493"/>
+      <Attr Name="_checkCondition" Value='"CLASS_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.ClassDivEO.ClassId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007494">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007494"/>
+      <Attr Name="_checkCondition" Value='"DIV_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.ClassDivEO.DivId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ClassDivClassFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CLASS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CLASS_DIV_CLASS_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.ClassDivEO.ClassId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ClassDivDivisionFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="DIVISION_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CLASS_DIV_DIVISION_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.ClassDivEO.DivId"/>
+    </AttrArray>
+  </Key>
+</Entity>

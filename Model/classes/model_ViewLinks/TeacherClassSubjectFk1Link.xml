@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TeacherClassSubjectFk1Link"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  EntityAssociation="model_Assoc.TeacherClassSubjectFk1Assoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="SubjectView"
+    Cardinality="1"
+    Owner="model_View.SubjectView"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SubjectView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_View.SubjectView.SubId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TeacherClassView"
+    Cardinality="-1"
+    Owner="model_View.TeacherClassView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="TeacherClassView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_View.TeacherClassView.SubId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

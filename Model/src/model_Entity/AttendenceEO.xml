@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AttendenceEO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="ATTENDENCE"
+  AliasName="AttendenceEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="model_Entity.AttendenceEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="SlNo"
+    IsNotNull="true"
+    ColumnName="SL_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ATTENDENCE"
+    PrimaryKey="true"
+    IsUpdateable="while_insert">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StudentId"
+    ColumnName="STUDENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ATTENDENCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AttendenceDate"
+    IsUpdateable="while_insert"
+    ColumnName="ATTENDENCE_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ATTENDENCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[adf.currentDate]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model_Entity.AttendenceEO.AttendenceDate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model_Entity.AttendenceEO.AttendenceDate_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Attendence"
+    Precision="20"
+    ColumnName="ATTENDENCE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ATTENDENCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StudentName"
+    Precision="40"
+    ColumnName="STUDENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ATTENDENCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Class1"
+    Precision="10"
+    ColumnName="CLASS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ATTENDENCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+      <Attr Name="_diagramName" Value="Class"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="StudentsEO"
+    Association="model_Assoc.AttendenceStudentsFk1Assoc"
+    AssociationEnd="model_Assoc.AttendenceStudentsFk1Assoc.StudentsEO"
+    AssociationOtherEnd="model_Assoc.AttendenceStudentsFk1Assoc.AttendenceEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="AttendencePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ATTENDENCE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.AttendenceEO.SlNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007987">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007987"/>
+      <Attr Name="_checkCondition" Value='"SL_NO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.AttendenceEO.SlNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AttendenceStudentsFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="STUDENTS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ATTENDENCE_STUDENTS_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.AttendenceEO.StudentId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

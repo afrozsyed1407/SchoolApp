@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="MainPageDef" Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="takeAttendence_d"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="marksEntry_Exam"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="marksEntry_Class"
+                IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="StaffView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="StaffView1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Criteria="StaffSearch"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="StaffView1Iterator" id="StaffSearchQuery"/>
+    <iterator Binds="StaffView1" RangeSize="10"
+              DataControl="AppModuleDataControl" id="StaffView1Iterator1"/>
+    <iterator Binds="TeacherClassView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="TeacherClassView1Iterator" ChangeEventPolicy="ppr"/>
+    <iterator Binds="StudentsView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="StudentsView1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Criteria="SearchStudents"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="StudentsView1Iterator" id="SearchStudentsQuery"/>
+    <iterator Binds="ClassDivView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ClassDivView1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="FeesView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="FeesView1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="StudentFee1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="StudentFee1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Criteria="StudentFeeCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="StudentFee1Iterator" id="StudentFeeCriteriaQuery"/>
+    <iterator Binds="TeacherToClass" RangeSize="25"
+              DataControl="AppModuleDataControl" id="TeacherToClassIterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="LedgerFee" RangeSize="25"
+              DataControl="AppModuleDataControl" id="LedgerFeeIterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="LedgerExpence" RangeSize="25"
+              DataControl="AppModuleDataControl" id="LedgerExpenceIterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="ExpencesView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ExpencesView1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Criteria="ExpencesSearch"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ExpencesView1Iterator" id="ExpencesSearchQuery"/>
+    <iterator Binds="AttendenceView1" RangeSize="-1"
+              DataControl="AppModuleDataControl" id="AttendenceView1Iterator"/>
+    <searchRegion Criteria="SearchStudentAttendence"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="AttendenceView1Iterator"
+                  id="SearchStudentAttendenceQuery"/>
+    <searchRegion Binds="LedgerExpenceIterator" Criteria="ExpencesViewCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="LedgerExpenceQuery"/>
+    <iterator Binds="TakeAttendence" RangeSize="25"
+              DataControl="AppModuleDataControl" id="TakeAttendenceIterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="TakeAttendenceIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TakeAttendenceQuery"/>
+    <iterator Binds="DashBoardStaticsRVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="DashBoardStaticsRVO1Iterator" ChangeEventPolicy="ppr"/>
+    <iterator Binds="TodaysAttendenceRVO1" RangeSize="-1"
+              DataControl="AppModuleDataControl"
+              id="TodaysAttendenceRVO1Iterator" ChangeEventPolicy="ppr"/>
+    <iterator Binds="TodaysLedgerDASH" RangeSize="-1"
+              DataControl="AppModuleDataControl" id="TodaysLedgerDASHIterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="StudentMarksView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="StudentMarksView1Iterator"/>
+    <iterator Binds="NewStudentsMarksView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="NewStudentsMarksView1Iterator" ChangeEventPolicy="ppr"/>
+    <iterator Binds="NewStudentsMarksViewRecord" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="NewStudentsMarksViewRecordIterator"/>
+    <searchRegion Criteria="SearchMarks"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="NewStudentsMarksViewRecordIterator"
+                  id="SearchMarksQuery"/>
+    <iterator Binds="StaffBirthdays1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="StaffBirthdays1Iterator"/>
+    <iterator Binds="StudentsBirthdays1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="StudentsBirthdays1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="StaffView1Iterator" id="StaffView1">
+      <nodeDefinition DefName="model_View.StaffView" Name="StaffView10">
+        <AttrNames>
+          <Item Value="StaffId"/>
+          <Item Value="FullName"/>
+          <Item Value="Dateofbirth"/>
+          <Item Value="Gender"/>
+          <Item Value="Phone"/>
+          <Item Value="Email"/>
+          <Item Value="JoinDate"/>
+          <Item Value="EducationalQualification"/>
+          <Item Value="Subject" Binds="Subject1"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="StaffView1Iterator" id="StaffId">
+      <AttrNames>
+        <Item Value="StaffId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="FullName">
+      <AttrNames>
+        <Item Value="FullName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="FatherName">
+      <AttrNames>
+        <Item Value="FatherName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="Dateofbirth">
+      <AttrNames>
+        <Item Value="Dateofbirth"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="Gender">
+      <AttrNames>
+        <Item Value="Gender"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="Aadhaar">
+      <AttrNames>
+        <Item Value="Aadhaar"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="JoinDate">
+      <AttrNames>
+        <Item Value="JoinDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator"
+                     id="EducationalQualification">
+      <AttrNames>
+        <Item Value="EducationalQualification"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="Subject">
+      <AttrNames>
+        <Item Value="Subject"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="StaffView1Iterator1" StaticList="false" Uses="LOV_Subject"
+          id="Subject1" DTSupportsMRU="true"/>
+    <tree IterBinding="TeacherClassView1Iterator" id="TeacherClassView1">
+      <nodeDefinition DefName="model_View.TeacherClassView"
+                      Name="TeacherClassView10">
+        <AttrNames>
+          <Item Value="ClsdivId"/>
+          <Item Value="SubId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="StaffView1Iterator" StaticList="false" Uses="LOV_Gender"
+          id="Gender1" DTSupportsMRU="false"/>
+    <listOfValues StaticList="false" IterBinding="StaffView1Iterator"
+                  Uses="LOV_Subject" id="Subject2"/>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="StudentsView1Iterator" id="StudentsView1">
+      <nodeDefinition DefName="model_View.StudentsView" Name="StudentsView10">
+        <AttrNames>
+          <Item Value="StudentId"/>
+          <Item Value="StuddentName"/>
+          <Item Value="ClsdivId"/>
+          <Item Value="FatherName"/>
+          <Item Value="Dateofbirth"/>
+          <Item Value="Gender"/>
+          <Item Value="Mobile"/>
+          <Item Value="Email"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="StudentsView1Iterator" id="DateOfAdmission">
+      <AttrNames>
+        <Item Value="DateOfAdmission"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="StudentId">
+      <AttrNames>
+        <Item Value="StudentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="StuddentName">
+      <AttrNames>
+        <Item Value="StuddentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="FatherName1">
+      <AttrNames>
+        <Item Value="FatherName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="MotherName">
+      <AttrNames>
+        <Item Value="MotherName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="Dateofbirth1">
+      <AttrNames>
+        <Item Value="Dateofbirth"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="Gender2">
+      <AttrNames>
+        <Item Value="Gender"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="Aadhar">
+      <AttrNames>
+        <Item Value="Aadhar"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="Mobile">
+      <AttrNames>
+        <Item Value="Mobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="Email1">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="Religion">
+      <AttrNames>
+        <Item Value="Religion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="Caste">
+      <AttrNames>
+        <Item Value="Caste"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="Subcaste">
+      <AttrNames>
+        <Item Value="Subcaste"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="MotherTongue">
+      <AttrNames>
+        <Item Value="MotherTongue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="Disability">
+      <AttrNames>
+        <Item Value="Disability"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="Address1">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="Nationality">
+      <AttrNames>
+        <Item Value="Nationality"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="FatherOccupation">
+      <AttrNames>
+        <Item Value="FatherOccupation"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="FatherAadhar">
+      <AttrNames>
+        <Item Value="FatherAadhar"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="FatherIncome">
+      <AttrNames>
+        <Item Value="FatherIncome"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="MotherOccupation">
+      <AttrNames>
+        <Item Value="MotherOccupation"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="MotherAadhar">
+      <AttrNames>
+        <Item Value="MotherAadhar"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="MotherIncome">
+      <AttrNames>
+        <Item Value="MotherIncome"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="PreviousSchool">
+      <AttrNames>
+        <Item Value="PreviousSchool"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="TcNumber">
+      <AttrNames>
+        <Item Value="TcNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="FirstLanguage">
+      <AttrNames>
+        <Item Value="FirstLanguage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="SecondLanguage">
+      <AttrNames>
+        <Item Value="SecondLanguage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator"
+                     id="IdentificationMarks">
+      <AttrNames>
+        <Item Value="IdentificationMarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="Fee">
+      <AttrNames>
+        <Item Value="Fee"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="StudentsView1Iterator" StaticList="false"
+          Uses="LOV_ClsdivId" id="ClsdivId" DTSupportsMRU="true"/>
+    <list IterBinding="StudentsView1Iterator" StaticList="false"
+          Uses="LOV_Gender" id="Gender3" DTSupportsMRU="false"/>
+    <list IterBinding="StudentsView1Iterator" StaticList="false"
+          Uses="LOV_Disability" id="Disability1" DTSupportsMRU="false"/>
+    <list IterBinding="StudentsView1Iterator" StaticList="false"
+          Uses="LOV_Caste" id="Caste1" DTSupportsMRU="false"/>
+    <tree IterBinding="ClassDivView1Iterator" id="ClassDivView1">
+      <nodeDefinition DefName="model_View.ClassDivView" Name="ClassDivView10">
+        <AttrNames>
+          <Item Value="ClsdivId"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="StudentsView"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model_View.StudentsView" Name="ClassDivView11"
+                      TargetIterator="${bindings.StudentsView1Iterator}">
+        <AttrNames>
+          <Item Value="StudentId"/>
+          <Item Value="StuddentName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="StudentsView1Iterator" id="ClsdivId1">
+      <AttrNames>
+        <Item Value="ClsdivId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="FeesView1Iterator" id="FeesView1">
+      <nodeDefinition DefName="model_View.FeesView" Name="FeesView10">
+        <AttrNames>
+          <Item Value="RecptNo"/>
+          <Item Value="IssueDate"/>
+          <Item Value="ModeOfPay"/>
+          <Item Value="Details"/>
+          <Item Value="Amount"/>
+          <Item Value="RecivedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="StudentFee1Iterator" id="StudentFee1">
+      <nodeDefinition DefName="model_View.StudentFee" Name="StudentFee10">
+        <AttrNames>
+          <Item Value="RecptNo"/>
+          <Item Value="IssueDate"/>
+          <Item Value="StudentId"/>
+          <Item Value="StuddentName"/>
+          <Item Value="ClsdivId"/>
+          <Item Value="Amount"/>
+          <Item Value="ModeOfPay"/>
+          <Item Value="Details"/>
+          <Item Value="RecivedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="StaffView1Iterator" id="StaffView11">
+      <nodeDefinition DefName="model_View.StaffView" Name="StaffView110">
+        <AttrNames>
+          <Item Value="StaffId"/>
+          <Item Value="FullName"/>
+          <Item Value="Gender"/>
+          <Item Value="Phone"/>
+          <Item Value="Subject"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TeacherClassView1Iterator" id="TeacherClassView11">
+      <nodeDefinition DefName="model_View.TeacherClassView"
+                      Name="TeacherClassView110">
+        <AttrNames>
+          <Item Value="StaffId"/>
+          <Item Value="ClsdivId"/>
+          <Item Value="SubId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TeacherClassView1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="TeacherToClassIterator" id="TeacherToClass">
+      <nodeDefinition DefName="model_View.TeacherClassView"
+                      Name="TeacherToClass0">
+        <AttrNames>
+          <Item Value="StaffId"/>
+          <Item Value="SubId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TeacherToClassIterator" id="ClsdivId2">
+      <AttrNames>
+        <Item Value="ClsdivId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ClassDivView1Iterator" id="ClassDivView11">
+      <nodeDefinition DefName="model_View.ClassDivView" Name="ClassDivView110">
+        <AttrNames>
+          <Item Value="ClsdivId"/>
+          <Item Value="ClassId"/>
+          <Item Value="DivId"/>
+          <Item Value="TotalStudents"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TeacherToClassIterator" id="TeacherToClass1">
+      <nodeDefinition DefName="model_View.TeacherClassView"
+                      Name="TeacherToClass10">
+        <AttrNames>
+          <Item Value="StaffId"/>
+          <Item Value="SubId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="LedgerFeeIterator" id="LedgerFee">
+      <nodeDefinition DefName="model_View.FeesView" Name="LedgerFee0">
+        <AttrNames>
+          <Item Value="RecptNo"/>
+          <Item Value="IssueDate"/>
+          <Item Value="StudentId"/>
+          <Item Value="ModeOfPay"/>
+          <Item Value="Details"/>
+          <Item Value="RecivedBy"/>
+          <Item Value="Amount"/>
+          <Item Value="TotalFee"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="StudentFee1Iterator" id="RecptNo">
+      <AttrNames>
+        <Item Value="RecptNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentFee1Iterator" id="IssueDate">
+      <AttrNames>
+        <Item Value="IssueDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="StudentFee1Iterator" StaticList="false"
+          Uses="LOV_StudentId" id="StudentId1" DTSupportsMRU="false"/>
+    <attributeValues IterBinding="StudentFee1Iterator" id="StuddentName1">
+      <AttrNames>
+        <Item Value="StuddentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentFee1Iterator" id="ClsdivId3">
+      <AttrNames>
+        <Item Value="ClsdivId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentFee1Iterator" id="Fee1">
+      <AttrNames>
+        <Item Value="Fee"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentFee1Iterator" id="Amount">
+      <AttrNames>
+        <Item Value="Amount"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="StudentFee1Iterator" StaticList="false"
+          Uses="LOV_ModeOfPay" id="ModeOfPay" DTSupportsMRU="false"/>
+    <attributeValues IterBinding="StudentFee1Iterator" id="Details">
+      <AttrNames>
+        <Item Value="Details"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentFee1Iterator" id="RecivedBy">
+      <AttrNames>
+        <Item Value="RecivedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="StudentFee1Iterator" id="CreateInsert1"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="LedgerFeeIterator" id="TotalFee">
+      <AttrNames>
+        <Item Value="TotalFee"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LedgerExpenceIterator" id="TotalExpences">
+      <AttrNames>
+        <Item Value="TotalExpences"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ExpencesView1Iterator" id="ExpencesView1">
+      <nodeDefinition DefName="model_View.ExpencesView" Name="ExpencesView10">
+        <AttrNames>
+          <Item Value="TokenNo"/>
+          <Item Value="TakenDate"/>
+          <Item Value="Amount"/>
+          <Item Value="Reason"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ExpencesView1Iterator" id="TokenNo">
+      <AttrNames>
+        <Item Value="TokenNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ExpencesView1Iterator" id="TakenDate">
+      <AttrNames>
+        <Item Value="TakenDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ExpencesView1Iterator" id="Amount1">
+      <AttrNames>
+        <Item Value="Amount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ExpencesView1Iterator" id="Reason">
+      <AttrNames>
+        <Item Value="Reason"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ExpencesView1Iterator" id="CreateInsert2"
+            InstanceName="AppModuleDataControl.ExpencesView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <tree IterBinding="AttendenceView1Iterator" id="AttendenceView1">
+      <nodeDefinition DefName="model_View.AttendenceView"
+                      Name="AttendenceView10">
+        <AttrNames>
+          <Item Value="AttendenceDate"/>
+          <Item Value="StudentId"/>
+          <Item Value="StudentName"/>
+          <Item Value="Class1"/>
+          <Item Value="Attendence"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="LedgerExpenceIterator" id="LedgerExpence">
+      <nodeDefinition DefName="model_View.ExpencesView" Name="LedgerExpence0">
+        <AttrNames>
+          <Item Value="TokenNo"/>
+          <Item Value="TakenDate"/>
+          <Item Value="Amount"/>
+          <Item Value="Reason"/>
+          <Item Value="TotalExpences"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="TakeAttendenceIterator" StaticList="false"
+          Uses="LOV_Class1" id="Class1" DTSupportsMRU="true"/>
+    <tree IterBinding="TakeAttendenceIterator" id="TakeAttendence">
+      <nodeDefinition DefName="model_View.AttendenceView"
+                      Name="TakeAttendence0">
+        <AttrNames>
+          <Item Value="AttendenceDate"/>
+          <Item Value="StudentId"/>
+          <Item Value="StudentName"/>
+          <Item Value="Class1"/>
+          <Item Value="Attendence"/>
+          <Item Value="SlNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="takeAttendence"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="takeAttendence"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="d" NDType="java.lang.String"
+                 NDValue="${bindings.takeAttendence_d}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="d">
+      <AttrNames>
+        <Item Value="takeAttendence_d"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TakeAttendenceIterator" id="CreateInsert3"
+            InstanceName="AppModuleDataControl.TakeAttendence"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <methodAction id="takeAttendence1"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="takeAttendence"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="d" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn6a">
+      <AttrNames>
+        <Item Value="StudentsIn6a"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn7a">
+      <AttrNames>
+        <Item Value="StudentsIn7a"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn8a">
+      <AttrNames>
+        <Item Value="StudentsIn8a"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn9a">
+      <AttrNames>
+        <Item Value="StudentsIn9a"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn10a">
+      <AttrNames>
+        <Item Value="StudentsIn10a"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn6b">
+      <AttrNames>
+        <Item Value="StudentsIn6b"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn7b">
+      <AttrNames>
+        <Item Value="StudentsIn7b"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn8b">
+      <AttrNames>
+        <Item Value="StudentsIn8b"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn9b">
+      <AttrNames>
+        <Item Value="StudentsIn9b"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn10b">
+      <AttrNames>
+        <Item Value="StudentsIn10b"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="NumberOfStudents">
+      <AttrNames>
+        <Item Value="NumberOfStudents"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="NumberOfClasses">
+      <AttrNames>
+        <Item Value="NumberOfClasses"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="NumberOfTeachers">
+      <AttrNames>
+        <Item Value="NumberOfTeachers"/>
+      </AttrNames>
+    </attributeValues>
+    <graph IterBinding="TodaysAttendenceRVO1Iterator" id="TodaysAttendenceRVO1"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
+      <graphDataMap leafOnly="true">
+        <series>
+          <data>
+            <item value="CountStudentId"/>
+          </data>
+        </series>
+        <groups>
+          <item value="Class1"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+    <attributeValues IterBinding="TodaysLedgerDASHIterator"
+                     id="Todayfeecollected">
+      <AttrNames>
+        <Item Value="Todayfeecollected"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TodaysLedgerDASHIterator" id="Todayexpences">
+      <AttrNames>
+        <Item Value="Todayexpences"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TodaysLedgerDASHIterator" id="Total">
+      <AttrNames>
+        <Item Value="Total"/>
+      </AttrNames>
+    </attributeValues>
+    <graph IterBinding="TodaysLedgerDASHIterator" id="TodaysLedgerDASH"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
+      <graphDataMap leafOnly="true">
+        <series>
+          <data>
+            <item value="Todayfeecollected"/>
+            <item value="Todayexpences"/>
+          </data>
+        </series>
+        <groups>
+          <item value="TodayFeeCollected"/>
+          <item value="TodayExpence"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+    <action IterBinding="StaffView1Iterator" id="CreateInsert4"
+            InstanceName="AppModuleDataControl.StaffView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="StudentsView1Iterator" id="CreateInsert5"
+            InstanceName="AppModuleDataControl.StudentsView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <attributeValues IterBinding="NewStudentsMarksView1Iterator"
+                     id="StudentName">
+      <AttrNames>
+        <Item Value="StudentName"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="marksEntry" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="marksEntry"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider">
+      <NamedData NDName="Exam" NDType="java.lang.String"
+                 NDValue="${bindings.marksEntry_Exam}"/>
+      <NamedData NDName="Class" NDType="java.lang.String"
+                 NDValue="${bindings.marksEntry_Class}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="Exam">
+      <AttrNames>
+        <Item Value="marksEntry_Exam"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="Class">
+      <AttrNames>
+        <Item Value="marksEntry_Class"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="NewStudentsMarksView1Iterator"
+          id="NewStudentsMarksView11">
+      <nodeDefinition DefName="model_View.NewStudentsMarksView"
+                      Name="NewStudentsMarksView110">
+        <AttrNames>
+          <Item Value="StudentId"/>
+          <Item Value="StudentName"/>
+          <Item Value="Class1"/>
+          <Item Value="Exam"/>
+          <Item Value="Sub1"/>
+          <Item Value="Sub2"/>
+          <Item Value="Sub3"/>
+          <Item Value="Sub4"/>
+          <Item Value="Sub5"/>
+          <Item Value="Sub6"/>
+          <Item Value="TotalMarks"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="NewStudentsMarksView1Iterator" id="CreateInsert6"
+            InstanceName="AppModuleDataControl.NewStudentsMarksView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <tree IterBinding="NewStudentsMarksViewRecordIterator"
+          id="NewStudentsMarksViewRecord">
+      <nodeDefinition DefName="model_View.NewStudentsMarksView"
+                      Name="NewStudentsMarksViewRecord0">
+        <AttrNames>
+          <Item Value="StudentId"/>
+          <Item Value="StudentName"/>
+          <Item Value="Class1"/>
+          <Item Value="Exam"/>
+          <Item Value="Sub1"/>
+          <Item Value="Sub2"/>
+          <Item Value="Sub3"/>
+          <Item Value="Sub4"/>
+          <Item Value="Sub5"/>
+          <Item Value="Sub6"/>
+          <Item Value="TotalMarks"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="StaffBirthdays1Iterator" id="StaffBirthdays1">
+      <nodeDefinition DefName="model_RVO.StaffBirthdays"
+                      Name="StaffBirthdays10">
+        <AttrNames>
+          <Item Value="StaffId"/>
+          <Item Value="FullName"/>
+          <Item Value="FatherName"/>
+          <Item Value="Dateofbirth"/>
+          <Item Value="Gender"/>
+          <Item Value="Phone"/>
+          <Item Value="Subject"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="StudentsBirthdays1Iterator" id="StudentsBirthdays1">
+      <nodeDefinition DefName="model_RVO.StudentsBirthdays"
+                      Name="StudentsBirthdays10">
+        <AttrNames>
+          <Item Value="StudentId"/>
+          <Item Value="StuddentName"/>
+          <Item Value="FatherName"/>
+          <Item Value="Dateofbirth"/>
+          <Item Value="Gender"/>
+          <Item Value="ClsdivId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

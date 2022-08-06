@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>SchoolTemplate</display-name>
+        <facet>
+          <facet-name>Body</facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>Title</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+        </attribute>
+        <attribute>
+          <attribute-name>User</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+        </attribute>
+      </component>
+    </af:xmlContent>
+    <af:panelSplitter orientation="vertical" splitterPosition="50" id="pt_ps1"
+                      disabled="true">
+      <f:facet name="first">
+        <af:panelSplitter id="pt_ps2" splitterPosition="100" disabled="true">
+          <f:facet name="first">
+            <af:image source="/Images/schoolSampleLogo.png"
+                      shortDesc="SchoolLogo" id="pt_i1"/>
+          </f:facet>
+          <f:facet name="second">
+            <af:panelSplitter id="pt_ps3" splitterPosition="218"
+                              positionedFromEnd="true" disabled="true">
+              <f:facet name="first">
+                <af:panelStretchLayout id="pt_psl1">
+                  <f:facet name="bottom"/>
+                  <f:facet name="center">
+                    <af:panelGroupLayout id="pt_pgl1" layout="vertical"
+                                         halign="center" valign="bottom">
+                      <af:outputText id="pt_ot1" value="#{attrs.Title}"
+                                     inlineStyle="color:Red; font-family:'Times New Roman', 'Arial Black', times, Serif; font-size:xx-large;"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="start"/>
+                  <f:facet name="end"/>
+                  <f:facet name="top"/>
+                </af:panelStretchLayout>
+              </f:facet>
+              <f:facet name="second">
+                <af:panelGroupLayout id="pt_pgl2" layout="vertical"
+                                     halign="right" styleClass="AFStretchWidth">
+                  <af:toolbar id="pt_t1">
+                    <af:menuBar id="pt_mb1">
+                      <af:menu id="pt_m1"
+                               text="Hello #{lgnBean.userName}"
+                               inlineStyle="font-size:medium;">
+                        <af:commandMenuItem text="LogOut"
+                                            id="pt_cmi1"
+                                            actionListener="#{LogOutBean.LogoutAction}"/>
+                      </af:menu>
+                    </af:menuBar>
+                  </af:toolbar>
+                  <af:selectOneChoice label="Skins" id="pt_soc1"
+                                      valueChangeListener="#{SkinChanger.ChangeSkin}"
+                                      autoSubmit="true"
+                                      value="#{sessionScope.skin}">
+                    <af:selectItem label="Skin 1" value="mySkin1" id="pt_si3"/>
+                    <af:selectItem label="Skin 2" value="mySkin2" id="pt_si2"/>
+                    <af:selectItem label="Skin 3" value="mySkin3" id="pt_si1"/>
+                    <af:selectItem label="Simple" id="pt_si4"
+                                   value="simple"/>
+                    <af:selectItem label="Fusion FX" id="pt_si5"
+                                   value="fusionFx"/>
+                  </af:selectOneChoice>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelSplitter>
+          </f:facet>
+        </af:panelSplitter>
+      </f:facet>
+      <f:facet name="second">
+        <!-- id="af_one_column_header_stretched_with_splitter"   -->
+        <af:decorativeBox theme="dark" id="pt_db2">
+          <f:facet name="center">
+            <af:decorativeBox theme="medium" id="pt_db1">
+              <f:facet name="center">
+                <af:panelStretchLayout id="pt_psl2">
+                  <f:facet name="bottom"/>
+                  <f:facet name="center">
+                    <af:facetRef facetName="Body"/>
+                  </f:facet>
+                  <f:facet name="start"/>
+                  <f:facet name="end"/>
+                  <f:facet name="top"/>
+                </af:panelStretchLayout>
+              </f:facet>
+            </af:decorativeBox>
+          </f:facet>
+        </af:decorativeBox>
+      </f:facet>
+    </af:panelSplitter>
+  </af:pageTemplateDef>
+</jsp:root>

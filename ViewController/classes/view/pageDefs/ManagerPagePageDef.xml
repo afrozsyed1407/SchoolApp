@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="ManagerPagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="DashBoardStaticsRVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="DashBoardStaticsRVO1Iterator"/>
+    <iterator Binds="TotalFeeandExpenceRVO1" RangeSize="-1"
+              DataControl="AppModuleDataControl"
+              id="TotalFeeandExpenceRVO1Iterator"/>
+    <iterator Binds="TodaysLedgerDASH" RangeSize="-1"
+              DataControl="AppModuleDataControl" id="TodaysLedgerDASHIterator"/>
+    <iterator Binds="StaffView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="StaffView1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Criteria="StaffSearch"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="StaffView1Iterator" id="StaffSearchQuery"/>
+    <iterator Binds="StudentsView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="StudentsView1Iterator"/>
+    <searchRegion Criteria="SearchStudents"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="StudentsView1Iterator" id="SearchStudentsQuery"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="NumberOfTeachers">
+      <AttrNames>
+        <Item Value="NumberOfTeachers"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="NumberOfStudents">
+      <AttrNames>
+        <Item Value="NumberOfStudents"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="NumberOfClasses">
+      <AttrNames>
+        <Item Value="NumberOfClasses"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn6a">
+      <AttrNames>
+        <Item Value="StudentsIn6a"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn6b">
+      <AttrNames>
+        <Item Value="StudentsIn6b"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn6c">
+      <AttrNames>
+        <Item Value="StudentsIn6c"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn6d">
+      <AttrNames>
+        <Item Value="StudentsIn6d"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn7a">
+      <AttrNames>
+        <Item Value="StudentsIn7a"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn7b">
+      <AttrNames>
+        <Item Value="StudentsIn7b"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn7c">
+      <AttrNames>
+        <Item Value="StudentsIn7c"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn7d">
+      <AttrNames>
+        <Item Value="StudentsIn7d"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn8a">
+      <AttrNames>
+        <Item Value="StudentsIn8a"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn8b">
+      <AttrNames>
+        <Item Value="StudentsIn8b"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn8c">
+      <AttrNames>
+        <Item Value="StudentsIn8c"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn8d">
+      <AttrNames>
+        <Item Value="StudentsIn8d"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn9a">
+      <AttrNames>
+        <Item Value="StudentsIn9a"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn9b">
+      <AttrNames>
+        <Item Value="StudentsIn9b"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn9c">
+      <AttrNames>
+        <Item Value="StudentsIn9c"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn9d">
+      <AttrNames>
+        <Item Value="StudentsIn9d"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn10a">
+      <AttrNames>
+        <Item Value="StudentsIn10a"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn10b">
+      <AttrNames>
+        <Item Value="StudentsIn10b"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn10c">
+      <AttrNames>
+        <Item Value="StudentsIn10c"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DashBoardStaticsRVO1Iterator"
+                     id="StudentsIn10d">
+      <AttrNames>
+        <Item Value="StudentsIn10d"/>
+      </AttrNames>
+    </attributeValues>
+    <graph IterBinding="TotalFeeandExpenceRVO1Iterator"
+           id="TotalFeeandExpenceRVO1"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
+      <graphDataMap leafOnly="true">
+        <series>
+          <data>
+            <item value="Totalfee"/>
+            <item value="Totalcollected"/>
+          </data>
+        </series>
+        <groups>
+          <item value="registeredFee"/>
+          <item value="CollectedFee"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+    <graph IterBinding="TodaysLedgerDASHIterator" id="TodaysLedgerDASH"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
+      <graphDataMap leafOnly="true">
+        <series>
+          <data>
+            <item value="Todayfeecollected"/>
+            <item value="Todayexpences"/>
+          </data>
+        </series>
+        <groups>
+          <item value="TodayFeeCollected"/>
+          <item value="TodayExpence"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+    <tree IterBinding="StaffView1Iterator" id="StaffView1">
+      <nodeDefinition DefName="model_View.StaffView" Name="StaffView10">
+        <AttrNames>
+          <Item Value="StaffId"/>
+          <Item Value="FullName"/>
+          <Item Value="Dateofbirth"/>
+          <Item Value="Gender"/>
+          <Item Value="Phone"/>
+          <Item Value="Email"/>
+          <Item Value="Salary"/>
+          <Item Value="JoinDate"/>
+          <Item Value="EducationalQualification"/>
+          <Item Value="Subject"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="StaffView1Iterator" id="StaffId">
+      <AttrNames>
+        <Item Value="StaffId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="FullName">
+      <AttrNames>
+        <Item Value="FullName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="FatherName">
+      <AttrNames>
+        <Item Value="FatherName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StaffView1Iterator" id="JoinDate">
+      <AttrNames>
+        <Item Value="JoinDate"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false" IterBinding="StaffView1Iterator"
+                  Uses="LOV_Subject" id="Subject"/>
+    <attributeValues IterBinding="StaffView1Iterator" id="Salary">
+      <AttrNames>
+        <Item Value="Salary"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <tree IterBinding="StudentsView1Iterator" id="StudentsView1">
+      <nodeDefinition DefName="model_View.StudentsView" Name="StudentsView10">
+        <AttrNames>
+          <Item Value="StudentId"/>
+          <Item Value="StuddentName"/>
+          <Item Value="FatherName"/>
+          <Item Value="Gender"/>
+          <Item Value="Mobile"/>
+          <Item Value="DateOfAdmission"/>
+          <Item Value="Fee"/>
+          <Item Value="ClsdivId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

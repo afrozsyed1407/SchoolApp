@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ClassDivView"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  SelectList="ClassDivEO.CLSDIV_ID, 
+       ClassDivEO.CLASS_ID, 
+       ClassDivEO.DIV_ID"
+  FromList="CLASS_DIV ClassDivEO"
+  OrderBy="CLSDIV_ID"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="ClassView1"
+    ViewObjectName="model_View.ClassView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DivisionView1"
+    ViewObjectName="model_View.DivisionView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ClassId"
+    ListVOName="ClassView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClassId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ClassId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ClassName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DivId"
+    ListVOName="DivisionView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DivId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DivId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DivName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="ClassDivEO"
+    Entity="model_Entity.ClassDivEO"/>
+  <ViewAttribute
+    Name="ClsdivId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClsdivId"
+    EntityUsage="ClassDivEO"
+    AliasName="CLSDIV_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ClassId"
+    LOVName="LOV_ClassId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClassId"
+    EntityUsage="ClassDivEO"
+    AliasName="CLASS_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DivId"
+    LOVName="LOV_DivId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DivId"
+    EntityUsage="ClassDivEO"
+    AliasName="DIV_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TotalStudents"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC">
+    <TransientExpression><![CDATA[StudentsView.count("StudentId")]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="ClassId"/>
+      <Item
+        Value="ClsdivId"/>
+      <Item
+        Value="DivId"/>
+    </Dependencies>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="StudentsView"
+    ViewLink="model_ViewLinks.StudentsClassDivFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TeacherClassView"
+    ViewLink="model_ViewLinks.TeacherClassClassDivFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="StudentsMarksView"
+    ViewLink="model_ViewLinks.StudentMarksClassDivFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="NewStudentsMarksView"
+    ViewLink="model_View.StudentsMarksClassDivFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

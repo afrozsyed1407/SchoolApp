@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:panelGroupLayout id="pgl2">
+          <af:panelGroupLayout id="pgl1" layout="horizontal" halign="right"
+                               styleClass="AFStretchWidth"
+                               inlineStyle="height:30px; background-color:#347aeb;">
+            <af:commandButton text="Enter" id="cb3"
+                              inlineStyle="background-color:White; height:25px; padding:1px; border-color:Blue; font-family:Georgia, 'Times New Roman', times, Serif; font-size:15px; background-repeat:no-repeat; margin:0px;"
+                              partialSubmit="true" immediate="true"
+                              binding="#{lgnBean.enterBtn}" rendered="true"
+                              action="enter"/>
+            <af:commandButton text="Home" id="cb2"
+                              inlineStyle="background-color:White; height:25px; padding:1px; border-color:Blue; font-family:Georgia, 'Times New Roman', times, Serif; font-size:15px; background-repeat:no-repeat; margin:0px;"/>
+            <af:commandButton text="About Us" id="commandButton1"
+                              inlineStyle="background-color:White; height:25px; padding:1px; border-color:Blue; font-family:Georgia, 'Times New Roman', times, Serif; font-size:15px; background-repeat:no-repeat; margin:0px;"/>
+            <af:commandButton text="Contact us" id="commandButton2"
+                              inlineStyle="background-color:White; height:25px; padding:1px; border-color:Blue; font-family:Georgia, 'Times New Roman', times, Serif; font-size:15px; background-repeat:no-repeat; margin:0px;"/>
+            <af:commandButton text="Login" id="cb1"
+                              inlineStyle="background-color:White; height:25px; padding:1px; border-color:Blue; font-family:Georgia, 'Times New Roman', times, Serif; font-size:15px; background-repeat:no-repeat; margin:0px;"
+                              binding="#{lgnBean.loginBtn}">
+              <af:showPopupBehavior popupId="p1" triggerType="action"/>
+            </af:commandButton>
+          </af:panelGroupLayout>
+          <af:image source="/Images/SpiritHC.png" id="i1"
+                    styleClass="AFStretchWidth"/>
+          <af:popup id="p1" contentDelivery="lazyUncached">
+            <af:dialog id="d2" title="Login" type="cancel">
+              <af:panelBox text="PanelBox1" id="pb1" showHeader="never"
+                           background="medium">
+                <f:facet name="toolbar"/>
+                <af:panelGroupLayout id="pgl3">
+                  <af:inputText label="UserName" id="it1"
+                                value="#{lgnBean.userName}"/>
+                  <af:inputText label="Password" id="inputText1"
+                                value="#{lgnBean.password}"/>
+                  <af:commandButton text="Submit" id="cb4"
+                                    actionListener="#{lgnBean.SubmitBtn}"/>
+                </af:panelGroupLayout>
+              </af:panelBox>
+            </af:dialog>
+          </af:popup>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

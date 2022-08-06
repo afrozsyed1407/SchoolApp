@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="StaffSubjectFk1Assoc"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="SubjectEO"
+    Cardinality="1"
+    Source="true"
+    Owner="model_Entity.SubjectEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="SubjectEO"/>
+      <Attr Name="_foreignKey" Value="model_Entity.SubjectEO.SubjectPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.SubjectEO.SubId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="StaffEO"
+    Cardinality="-1"
+    Owner="model_Entity.StaffEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="StaffEO"/>
+      <Attr Name="_foreignKey" Value="model_Entity.StaffEO.StaffSubjectFk1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.StaffEO.Subject"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

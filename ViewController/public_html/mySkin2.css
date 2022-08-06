@@ -1,0 +1,190 @@
+/*body
+{
+  background-color: White;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1
+{
+  color: navy;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+h2
+{
+  color: navy;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+h3
+{
+  color: navy;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: lighter;
+  text-transform: capitalize;
+}*/
+af|commandButton:alias
+{
+  width: 100px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+
+af|column::column-header-cell
+{
+  color: rgb(255,234,245);
+}
+
+/* to change the background of the components to an image*/
+/*
+af|inputText::content
+{
+  background:url(images/Label.jpg);
+  text-align: center;
+}
+af|inputText::content {background: url("images/Label.jpg")}
+af|selectOneChoice::content {background: url("images/Label.jpg")}
+af|inputListOfValues::content {background: url("images/Label.jpg")}
+af|inputComboboxListOfValues::content {background: url("Label.jpg")}
+*/
+
+af|column::column-header-cell-content
+{
+  background-color: #4c1648;
+  height:20px;
+  text-align:center;
+  vertical-align: middle;
+  font-weight: bold;
+  color: White;
+}
+
+/* this style is used to change the height of the header row */
+af|table.tableStyle af|column::column-header-cell-content
+{
+  height:50px;
+}
+af|column::column-header-cell-content {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    background-color: #ed5cad;
+    padding: 3px;
+}
+
+af|column::data-cell
+{
+  background:#bbc7c6;
+}
+
+af|column::banded-data-cell
+{
+  background:white;
+}
+
+af|column::data-cell:selected
+{
+  color: #FFFFFF;
+  background-color: rgb(255,170,237);
+}
+
+af|table::data-row:selected af|column::data-cell 
+{
+  border-top: 2px solid Maroon;
+  border-bottom: 2px solid Maroon;
+}
+
+af|table::data-row:selected af|column::banded-data-cell 
+{
+  border-top: 2px solid Maroon;
+  border-bottom: 2px solid Maroon;
+}
+
+af|table::data-row:selected:focused af|column::data-cell 
+{
+  border-top: 2px  solid  Maroon ;
+  border-bottom: 2px solid Maroon;
+  background-color: #5f839d;
+  color: Black;
+  font-weight: bolder;
+}
+
+af|table::data-row:selected:focused af|column::banded-data-cell
+{
+  border-top: 2px solid Maroon;
+  border-bottom: 2px solid Maroon;
+  background-color:  rgb(255,204,220);
+  color: Black;
+  font-weight: bolder;
+}
+
+af|table::data-row:selected:inactive af|column::data-cell 
+{
+  border-top: 2px solid Maroon  ;
+  border-bottom: 2px solid Maroon;
+  background-color: rgb(255,204,220);
+  color: Black;
+}
+
+af|table::data-row:selected:inactive af|column::banded-data-cell 
+{
+  border-top: 2px solid Maroon;
+  border-bottom: 2px solid Maroon;
+  background-color: rgb(255,204,220);
+  color: Black;
+}
+
+af|button
+{
+  BORDER-RIGHT: thin groove;
+  BORDER-TOP: thin groove;
+  FONT-WEIGHT: bold;
+  FONT-SIZE: 12px;
+  BORDER-LEFT: thin groove;
+  CURSOR:pointer;
+  COLOR: white;
+  BORDER-BOTTOM: thin groove;
+  BACKGROUND: #94004a;
+  width: 80px;
+}
+af|column::data-cell {
+    color: black;
+    background-color: #ffdbef;
+}
+af|column::banded-data-cell {
+    color: maroon;
+}
+af|pannelBox{
+    background-color: #ffdbef;
+}
+af|table::data-row:selected:inactive af|column::data-cell,
+af|column::data-cell:selected,
+af|table::data-row:selected:busy,
+af|column::data-cell:focus,
+af|table::data-row:selected:focused af|column::banded-data-cell,
+af|table::data-row:selected:focused af|column::data-cell,
+af|table::data-row:selected af|column::data-cell {
+    color: white;
+    background-color: #ed5cad;
+}
+af|panelBox::center:core:default {
+    border: 1px solid #BFBFBF;
+    border-bottom: none !important;
+    background-image: none !important;
+    background-color: #ffe3f2 !important;
+}
+.AFDefaultFont:alias{
+    font-family:'Times New Roman', 'Arial Black', times, Serif;
+}
+
+af|document, body, af|table, af|showDetailItem
+{
+  background-image: none;
+  background-color: #ffb5de;
+  font-style: italic
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ClassView"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  SelectList="ClassEO.CLASS_ID, 
+       ClassEO.CLASS_NAME"
+  FromList="CLASS ClassEO"
+  OrderBy="CLASS_ID"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="ClassEO"
+    Entity="model_Entity.ClassEO"/>
+  <ViewAttribute
+    Name="ClassId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClassId"
+    EntityUsage="ClassEO"
+    AliasName="CLASS_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ClassName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClassName"
+    EntityUsage="ClassEO"
+    AliasName="CLASS_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="ClassDivView"
+    ViewLink="model_ViewLinks.ClassDivClassFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

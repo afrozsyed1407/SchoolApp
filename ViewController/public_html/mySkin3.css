@@ -1,0 +1,188 @@
+/*body
+{
+  background-color: White;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1
+{
+  color: navy;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+h2
+{
+  color: navy;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+h3
+{
+  color: navy;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: lighter;
+  text-transform: capitalize;
+}*/
+body{ padding:0px; margin:0px; 
+/*background:url(images/Login_02.jpg) repeat-x #454545;*/
+font-family:Times New Roman, Times, serif; font-size:12px; color:#000000}
+
+
+
+af|toolbar
+{
+  text-align: center;
+}
+
+af|toolbar::body
+{
+  text-align: center;
+}
+
+.AFLabel:alias
+{
+  font-weight: bolder;
+}
+
+af|commandButton:alias
+{
+  width: 100px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+af|commandButton:hover
+{
+  background-image: url("images/Login_00_17.png");
+}
+
+.AFButtonBackgroundHover:alias
+{
+  background-image: url("images/Login_00_17.png");
+}
+
+af|column::column-header-cell
+{
+  color:#FFFFFF;
+}
+
+af|inputText::content
+{
+  background-color: #c6d6ff;
+  text-align: center;
+}
+
+af|inputDate::content
+{
+  background-color: #c6d6ff;
+  text-align: center;
+}
+
+af|column::column-header-cell-content
+{
+  background-color:#5f839d;
+  height:20px;
+  text-align:center;
+  vertical-align: middle;
+  font-weight: bolder;
+}
+
+/* this style is used to change the height of the header row */
+af|table af|column::column-header-cell-content
+{
+  height:50px;
+}
+
+af|column::data-cell
+{
+  background:#bbc7c6;
+}
+
+af|column::banded-data-cell
+{
+  background:white;
+}
+
+af|column::data-cell:selected
+{
+  color:#FFFFFF;
+  background-color:#5f839d;
+}
+
+af|table::data-row:selected af|column::data-cell 
+{
+  border-top: 2px solid purple;
+  border-bottom: 2px solid purple;
+}
+
+af|table::data-row:selected af|column::banded-data-cell 
+{
+  border-top: 2px solid purple;
+  border-bottom: 2px solid purple;
+}
+
+af|table::data-row:selected:focused af|column::data-cell 
+{
+  border-top: 2px solid green;
+  border-bottom: 2px solid green;
+  background-color: #5f839d;
+  color: white;
+  font-weight: bolder;
+}
+
+af|table::data-row:selected:focused af|column::banded-data-cell
+{
+  border-top: 2px solid green;
+  border-bottom: 2px solid green;
+  background-color: #5f839d;
+  color: white;
+  font-weight: bolder;
+}
+
+af|table::data-row:selected:inactive af|column::data-cell 
+{
+  border-top: 2px solid green  ;
+  border-bottom: 2px solid green;
+  background-color: #5f839d;
+  color: White;
+}
+
+af|table::data-row:selected:inactive af|column::banded-data-cell 
+{
+  border-top: 2px solid green;
+  border-bottom: 2px solid green;
+  background-color: #5f839d;
+  color: White;
+}
+af|panelAccordion{
+    cursor:pointer;
+    background-color:Scrollbar;
+}
+
+af|button
+{
+  BORDER-RIGHT: thin groove;
+  BORDER-TOP: thin groove;
+  FONT-WEIGHT: bold;
+  FONT-SIZE: 12px;
+  BORDER-LEFT: thin groove;
+  CURSOR: pointer;
+  COLOR: white;
+  BORDER-BOTTOM: thin groove;
+  BACKGROUND: #006699;
+  width: 80px;
+  cursor:pointer;
+  
+}
+
+
+af|document, body, af|table, af|showDetailItem
+{
+  background-image: none;
+  background-color: #ffe794;
+}

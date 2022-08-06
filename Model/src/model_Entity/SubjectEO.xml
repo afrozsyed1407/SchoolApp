@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SubjectEO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="SUBJECT"
+  AliasName="SubjectEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="SubId"
+    IsNotNull="true"
+    Precision="8"
+    ColumnName="SUB_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUBJECT"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="8"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SubName"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="SUB_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUBJECT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="StaffEO"
+    Association="model_Assoc.StaffSubjectFk1Assoc"
+    AssociationEnd="model_Assoc.StaffSubjectFk1Assoc.StaffEO"
+    AssociationOtherEnd="model_Assoc.StaffSubjectFk1Assoc.SubjectEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TeacherClassEO"
+    Association="model_Assoc.TeacherClassSubjectFk1Assoc"
+    AssociationEnd="model_Assoc.TeacherClassSubjectFk1Assoc.TeacherClassEO"
+    AssociationOtherEnd="model_Assoc.TeacherClassSubjectFk1Assoc.SubjectEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SubjectPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SUBJECT_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.SubjectEO.SubId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007464">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007464"/>
+      <Attr Name="_checkCondition" Value='"SUB_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.SubjectEO.SubId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007506">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007506"/>
+      <Attr Name="_checkCondition" Value='"SUB_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model_Entity.SubjectEO.SubName"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,79 @@
+/*body
+{
+  background-color: White;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1
+{
+  color: navy;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+h2
+{
+  color: navy;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+h3
+{
+  color: navy;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: lighter;
+  text-transform: capitalize;
+}*/
+af|column::column-header-cell
+{
+  color: rgb(255,234,245);
+}
+
+af|column::column-header-cell-content
+{
+  background-color: rgb(36, 59, 89);
+  height:20px;
+  text-align:center;
+  vertical-align: middle;
+  font-weight: bold;
+  color: White;
+}
+
+af|table af|column::column-header-cell-content
+{
+  height:30px; 
+}
+
+af|column::data-cell
+{
+  background:#d0d8e8;
+}
+
+af|column::banded-data-cell
+{
+  background-color: rgb(233, 237, 244);
+}
+
+af|table::data-row:selected:focused af|column::data-cell, af|table::data-row:selected:focused af|column::banded-data-cell
+{
+  background-image: url("images/topHeaderBg.jpg");
+  color: White;
+  font-weight: bolder;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+af|document, body, af|table, af|showDetailItem
+{
+  background-image: none;
+  background-color: #e2f8ec;
+}
+
+af|panelCollection
+{
+  border: 2px groove black;
+}
